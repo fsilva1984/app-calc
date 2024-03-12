@@ -70,20 +70,18 @@ btAction.forEach(item => {
 
             const str = retrieveValueFromArray(array);
             let lastItem = str.slice(-1);
-            
-            if (lastItem === '%') {
+
+            if (lastItem === '%') {// calculo de porcentagem
                 let just = retrieveValueFromArray(array);
                 just = just.replace('%', '/100')
                 displayUpdate(resolve(just));
                 clean(array);
+                return
             }
 
-
-
-
-            // let just = retrieveValueFromArray(array);
-            // displayUpdate(resolve(just));
-            // clean(array);
+            let just = retrieveValueFromArray(array);
+            displayUpdate(resolve(just));
+            clean(array);
         }
     });
 });
