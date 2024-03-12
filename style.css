@@ -19,7 +19,7 @@ main {
 
 /*######## DISPLAY #######################*/
 header {
-    width: 284px;
+    width: 400px;
     display: flex;
     flex-wrap: wrap;
     background-color: aliceblue;
@@ -38,19 +38,19 @@ header {
 .result {
     text-align: end;
     width: 100%;
-    font-size: large;
+    font-size: 1.5rem;
     margin: 5px;
 }
 
 .screen {
-    font-size: xx-large;
+    font-size: 2rem;
 }
 
 /*#########################################*/
 
 /*################ BODY ##################*/
 .body-calc {
-    width: 284px;
+    width: 400px;
     margin-top: 20px;
     border-radius: 5px;
     border: 1px solid rgb(157, 157, 160);
@@ -58,9 +58,9 @@ header {
 
 button {
     border: 0;
-    width: 71px;
-    height: 45px;
-    font-size: large;
+    width: 100px;
+    height: 65px;
+    font-size: 1.2rem;
     background-color: rgb(204, 204, 204);
 }
 
@@ -72,10 +72,52 @@ button:hover {
 }
 
 #equal {
-    width: 142px;
+    width: 200px;
     border-radius: 5px;
     background-color: rgb(20, 120, 252);
 }
+
+.box-btn {
+    display: flex;
+    flex-wrap: wrap;
+    background-color: rgb(204, 204, 204);
+}
+
+/*#########################################*/
+
+/*################# MOBILE ################*/
+
+@media (max-width: 450px) {
+    header {
+        width: 100%;
+    }
+
+    .body-calc {
+        margin-top: 3px;
+        width: 98%;
+    }
+
+    #shebang {
+        display: none;
+    }
+
+    button {
+        width: 33%;
+    }
+
+    #equal {
+        width: 100%;
+    }
+}
+
+
+
+/*#########################################*/
+
+
+
+
+/*
 
 .box-bt-operators {
     display: flex;
@@ -83,10 +125,4 @@ button:hover {
     background-color: rgb(204, 204, 204);
 }
 
-.box-bt-num {
-    display: flex;
-    flex-wrap: wrap;
-    background-color: rgb(204, 204, 204);
-}
-
-/*#########################################*/
+*/
