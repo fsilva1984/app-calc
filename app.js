@@ -23,8 +23,15 @@ btNum.forEach(item => {
 // escuta o evento click na classe de botoes das operacoes aritimeticas
 operators.forEach(item => {
     item.addEventListener('click', e => {
-        let el = e.target.textContent;
-        
+        const el = e.target.textContent;
+
+        if (el == '√') {
+            let str = retrieveValueFromArray(array);
+            displayUpdate(sqr(str));
+            clean(array);
+            return
+        }
+
         if (el !== '√') {
 
             if (el === 'x') {
@@ -32,14 +39,14 @@ operators.forEach(item => {
                 array.push('*');
                 return
             }
+
+            if (el === '÷') {
+                inDisplay(el);
+                array.push('/');
+                return
+            }
             inDisplay(el);
             array.push(el);
-        }
-
-        if (el == '√') {
-            let str = retrieveValueFromArray(array);
-            displayUpdate(sqr(str));
-            clean(array);
         }
 
     });
@@ -60,9 +67,23 @@ btAction.forEach(item => {
         }
 
         if (el === '=') {
-            let just = retrieveValueFromArray(array);
-            displayUpdate(resolve(just));
-            clean(array);
+
+            const str = retrieveValueFromArray(array);
+            let lastItem = str.slice(-1);
+            
+            if (lastItem === '%') {
+                let just = retrieveValueFromArray(array);
+                just = just.replace('%', '/100')
+                displayUpdate(resolve(just));
+                clean(array);
+            }
+
+
+
+
+            // let just = retrieveValueFromArray(array);
+            // displayUpdate(resolve(just));
+            // clean(array);
         }
     });
 });
